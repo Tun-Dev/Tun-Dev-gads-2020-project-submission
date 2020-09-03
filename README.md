@@ -6,7 +6,8 @@
 
 <details>
   <!-- The complete lab title goes here 👇🏾-->
-  <summary>Lab 1: Title goes here</summary>
+  <summary>Lab 1: Google Cloud Fundamentals: Getting Started with Compute Engine
+</summary>
   <!-- Provide path to the screenshot here. Example 👇🏾-->
   <img src="screenshots/example_screenshot.png">
 </details>
