@@ -37,5 +37,25 @@ In this lab, you will learn how to perform the following tasks:
       gcloud compute firewall-rules create allow-http --action=ALLOW --destination=INGRESS --rules=http:80 --target-tags=http
       
       
-2. 
+2. Create a virtual machine using the gcloud command line.
+   1. Choose a zone from the output of this region and use the grep command to filter the results associated with us-central1           region:
+   
+      gcloud compute zones list | grep us-central1
+      
+   2. After choosing a zone other than the one assigned to you, create the virtual machine:
+   
+      gcloud config set compute/zone us-central1-b
+      gcloud compute instances create "my-vm-2" --machine-type "n1-standard-1" --image-project "debian-cloud" --image "debian-9-stretch-v20190213" --subnet "default"
+      
+3. Connect between the two virtual machine instances.
+    
+    1. Use the ping command to confirm that my-vm-2 can reach my-vm-1 over the network
+      - Connect to my-vm-2:
+            gcloud compute ssh my-vm-2
+      - ping my-vm-1 from my-vm-2:
+            ping -c 4 my-vm-1
+      - Use the ssh command to open a command prompt on my-vm-1 from my-mv-2:
+            ssh my-vm-1
+      - At the command 
+      
 ```
