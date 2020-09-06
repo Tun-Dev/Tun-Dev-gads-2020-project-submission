@@ -56,6 +56,13 @@ In this lab, you will learn how to perform the following tasks:
             ping -c 4 my-vm-1
       - Use the ssh command to open a command prompt on my-vm-1 from my-mv-2:
             ssh my-vm-1
-      - At the command 
+      - At the command prompt on my-vm-1, install the Nginx web server:
+            sudo apt-get install nginx-light -y
+      - Use the nano text editor to add a custom message to the home page of the web server:
+            sudo nano /var/www/html/index.nginx-debian.html
+      - Use teh arrow keys to move the cursor to the line just below the h1 header. Add text like this, and replace YOUR_NAME with your name:
+            Hi from Tungbulu
+      - Hit Ctrl+O then press Enter to save, Press Ctrl+X to exit editor
+      -
       
 ```
