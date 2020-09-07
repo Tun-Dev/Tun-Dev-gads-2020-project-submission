@@ -63,6 +63,18 @@ In this lab, you will learn how to perform the following tasks:
       - Use teh arrow keys to move the cursor to the line just below the h1 header. Add text like this, and replace YOUR_NAME with your name:
             Hi from Tungbulu
       - Hit Ctrl+O then press Enter to save, Press Ctrl+X to exit editor
-      -
-      
+      - Confirm that the web server is serving your new page. At the command prompt on vm-vm-1, execute this command:
+            curl http://localhost/
+          - Result:
+                - The response will be the HTML source of the web server's home page, including your line of custom text.
+      - To exit the command prompt on my-vm-1, execute this command:
+            exit
+      - To confirm that my-vm-2 can reach the web server on my-vm-1, at the command prompt on my-vm-2, execute this command:
+            curl http://my-vm-1/
+          - Result: The response will again be the HTML source of the web server's home page, including your line of custom text
+     2. Now get the external IP of the my-vm-1 instances from this command:
+            gcloud compute instances list --zone us-central1-a
+     3. Paste the copied IP address of my-vm-1 into a new browser tab and hit enter. 
+     
+          - Result: You will see your your web server's homepage, including custom text
 ```
