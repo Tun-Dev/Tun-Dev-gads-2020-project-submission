@@ -9,7 +9,7 @@
   <summary>Lab 1: Google Cloud Fundamentals: Getting Started with Compute Engine
 </summary>
   <!-- Provide path to the screenshot here. Example 👇🏾-->
-  <img src="Screenshots/Lab1.JPG">
+  <img src="Screenshots/Lab1.jpg">
 </details>
 
 <details>
