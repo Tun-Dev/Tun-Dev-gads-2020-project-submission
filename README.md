@@ -9,14 +9,14 @@
   <summary>Lab 1: Google Cloud Fundamentals: Getting Started with Compute Engine
 </summary>
   <!-- Provide path to the screenshot here. Example 👇🏾-->
-  <img src="screenshots/example_screenshot.png">
+  <img src="Screenshots/Lab1.JPG">
 </details>
 
 <details>
   <!-- The complete lab title goes here 👇🏾-->
-  <summary>Lab 2: Title Goes here</summary>
+  <summary>Lab 2: Google Cloud Fundamentals: Getting started with GKE</summary>
   <!-- Provide path to the screenshot here. Example 👇🏾-->
-  <img src="screenshots/example_screenshot.png">
+  <img src="Screenshots/Lab4.JPG">
 </details>
 
 ## Translation code
@@ -77,4 +77,44 @@ In this lab, you will learn how to perform the following tasks:
      3. Paste the copied IP address of my-vm-1 into a new browser tab and hit enter. 
      
           - Result: You will see your your web server's homepage, including custom text
+          
+          
+          
+# LAB 2: Google Cloud Fundamentals: Getting Started with GKE
+
+## Objectives:
+In this lab, you will learn how to perform the following tasks:
+     - Provision a Kubernetes cluster using Kubernetes Engine.
+     - Deploy and manage Docker containers using kubectl.
+     
+##Steps:
+      - Go to Navigation Menu and Click API & Services  and confirm if Kubernetes Engine API and Container Registry API are enabled, if not enable them.
+      
+1. Provision  a Kubernetes Engine      
+      - Export your zone into an environment variable called MY_ZONE:
+            export MY_ZONE=us-central1-a
+      - Start a Kubernetes cluster managed by Kubernetes Engine. Name the cluster webfrontend and configure it to run 2 nodes:
+            gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 2
+      - Check your installed version of Kubernetes using the kubectl version command:
+            kubectl version
+2. Deploy and manage Docker containers using kubectl
+      - launch a single instance of the nginx container:
+            kubectl create deploy nginx --image=nginx:1.17.10
+      - View the pod running the nginx container:
+            kubectl get pods
+      - Expose the nginx container to the Internet:
+             kubectl expose deployment nginx --port 80 --type LoadBalancer
+      - View the new service:
+             kubectl get services
+             
+            -Open a new web browser tab and paste your cluster's external IP address into the address bar. The default home page                of the Nginx browser is displayed.
+            
+      - Scale up the number of pods running on your service:
+             kubectl scale deployment nginx --replicas 3
+      - Confirm that Kubernetes has updated the number of pods:
+             kubectl get pods
+      - Confirm that your external IP address has not changed:
+             kubectl get services
+             
+             - Return to the web browser tab in which you viewed your cluster's external IP address. Refresh the page to confirm                  that the nginx web server is still responding.
 ```
